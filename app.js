@@ -3,8 +3,8 @@
 const wrapper = document.querySelector( '.wrapper' );
 let counter = 0;
 let activeCards = [];
-let firstPlayerName = prompt( 'Ime prvog igrača : ') || 'Player 1';
-let secondPlayerName = prompt( 'Ime drugog igrača : ') || 'Player 2';
+let firstPlayerName = prompt( 'First player name : ') || 'Player 1';
+let secondPlayerName = prompt( 'Second player name : ') || 'Player 2';
 
 let icons = [   
         'icons/SVG/airplane.svg', 'icons/SVG/airplane.svg',
