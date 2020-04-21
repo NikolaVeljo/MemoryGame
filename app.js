@@ -1,6 +1,6 @@
 "use strict";
 
-const wrapper = document.querySelector('.wrapper');
+const wrapper = document.querySelector( '.wrapper' );
 let counter = 0;
 let activeCards = [];
 let firstPlayerName = prompt( 'Ime prvog igrača : ') || 'Player 1';
@@ -41,12 +41,21 @@ let activePlayer = players[0];
 
 function winnerMessage( player ){
 
-    let winMsg = document.createElement('div');
+    let winMsg = document.createElement( 'div' );
     winMsg.className = 'winner__msg';
-    winMsg.innerHTML = `${player} je pobednik!`;
+    if ( player ){
+
+        winMsg.innerHTML = `The winner is ${ player }!`;
+
+    }
+    else {
+
+        winMsg.innerHTML = `It's draw!`;
+
+    }
 
 
-    return document.body.appendChild(winMsg);
+    return document.body.appendChild( winMsg );
 }
 
 function isEqual ( activeCards ){
@@ -208,9 +217,14 @@ cardFront.forEach( ( card ) => {
                             winnerMessage( players[0].name );
 
                         }
-                        else {
+                        else if ( players[0].score < players[1].score ){
 
                             winnerMessage( players[1].name );
+
+                        }
+                        else {
+
+                            winnerMessage();
 
                         }
 
